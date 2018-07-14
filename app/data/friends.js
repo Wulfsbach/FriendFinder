@@ -1,7 +1,7 @@
 
   var express = require('express');
   var path = require('path');
-  var router = express.Router();
+ 
   var matches = [
   {
 
@@ -56,4 +56,5 @@
 }
 
   ];
- 
+
+ module.exports = matches;
