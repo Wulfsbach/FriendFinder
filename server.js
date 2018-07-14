@@ -14,6 +14,7 @@ require(path.join(__dirname, './app/routing/apiRoutes'))(app);
 app.use('/', html);
 app.use('/survey', html);
 app.use(bodpar.json());
+app.use(bodyParser.urlencoded());
 
 app.listen(port,function(){
     console.log("Server listening on:localhost:" + port);
