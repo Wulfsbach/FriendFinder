@@ -8,6 +8,7 @@ var port = process.env.port || 3707;
 
 
 app.use('/', routesHtml);
+app.use('/survey',routesHtml);
 app.listen(port,function(){
     console.log("Server listening on:localhost:" + port);
 });
