@@ -1,33 +1,34 @@
-var express = require('express');
+var fs= require("fs");
 var path = require('path');
-var matches = require('../data/friends');
-// var router = express.Router();
+var matches = JSON.parse(fs.readFileSync('app/data/friends.js', "utf8"));
 
-// router.get('/api/friends', function(req,res){
-//   res.send('hello');
-//   s.json(matches);
 
-// });
- 
-// module.exports=router;  // re
 
-var app = express();
+ function apiRoutes(app){
 
-module.exports = function(app){
-
-    app.set('json spaces' , 3);
+  
     app.get('/api/friends',function(req,res){
         
-        res.json(matches);
+        return res.json(matches);
        
     });
 
 
     app.post('/api/friends', function(req,res){
+// var me = request.body;
 
-        
+// var match= topMatch(me,matches);
+
+// matches.push(me);
+
+// friends = json.stringify(matches);
+// fs.writeFile(__dirname + "/..data/friends.js", matches, function(err) {
+//     if (err) return console.log(err);
+// })
+
     })
 };
 
 
 
+module.exports = apiRoutes;
